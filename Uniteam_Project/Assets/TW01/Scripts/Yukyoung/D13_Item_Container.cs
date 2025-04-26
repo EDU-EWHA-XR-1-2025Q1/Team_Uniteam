@@ -5,7 +5,7 @@ using UnityEngine;
 public class D13_Item_Container : MonoBehaviour
 {
     public GameObject Target;
-    public int cloneCount = 10; //¸î °³ cloneÇÒ Áö
+    public int cloneCount = 10; //ëª‡ ê°œ cloneí•  ì§€
 
 
     private void Start()
@@ -13,22 +13,22 @@ public class D13_Item_Container : MonoBehaviour
         Instantiate_GameObject();
     }
 
-    void Instantiate_GameObject() //for ¹İº¹¹®À» ÀÌ¿ëÇØ¼­ clone º¹Á¦
+    void Instantiate_GameObject() //for ë°˜ë³µë¬¸ì„ ì´ìš©í•´ì„œ clone ë³µì œ
     {
         for (int i = 0; i < cloneCount; i++)
         {
-            //º¹Á¦ÇÑ Å¬·ĞÀÇ À§Ä¡ ÁöÁ¤
-            Vector3 randomSphere = Random.insideUnitSphere * 2.5f; //insideUnitSphere: 1 unit ÀÌ³»¿¡¼­ ·£´ıÇÑ À§Ä¡°ªÀÌ Vector3 Å¸ÀÔÀÇ º¯¼ö¿¡ ÀúÀåµÊ
-            randomSphere.y = 0f; //³ôÀÌ´Â 0À¸·Î
-            Vector3 randomPos = randomSphere + transform.position; //±âº»ÀûÀ¸·Î´Â ·£´ıÇÑ °ªÀÌ worldÀÇ ¿øÁ¡À» ±âÁØÀ¸·Î »ı¼ºµÇ´Âµ¥ itemÀÇ À§Ä¡¸¦ ±âÁØÀ¸·Î »ı¼ºµÇµµ·Ï
+            //ë³µì œí•œ í´ë¡ ì˜ ìœ„ì¹˜ ì§€ì •
+            Vector3 randomSphere = Random.insideUnitSphere * 2.5f; //insideUnitSphere: 1 unit ì´ë‚´ì—ì„œ ëœë¤í•œ ìœ„ì¹˜ê°’ì´ Vector3 íƒ€ì…ì˜ ë³€ìˆ˜ì— ì €ì¥ë¨
+            randomSphere.y = 0f; //ë†’ì´ëŠ” 0ìœ¼ë¡œ
+            Vector3 randomPos = randomSphere + transform.position; //ê¸°ë³¸ì ìœ¼ë¡œëŠ” ëœë¤í•œ ê°’ì´ worldì˜ ì›ì ì„ ê¸°ì¤€ìœ¼ë¡œ ìƒì„±ë˜ëŠ”ë° itemì˜ ìœ„ì¹˜ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ìƒì„±ë˜ë„ë¡
             
-            //º¹Á¦ÇÑ Å¬·ĞÀÇ r°¢µµ ÁöÁ¤       
+            //ë³µì œí•œ í´ë¡ ì˜ rê°ë„ ì§€ì •       
             float randomAngle = Random.value * 360f;
             Quaternion randomRot = Quaternion.Euler(0, randomAngle, 0);
             GameObject Clone = Instantiate(Target, randomPos, randomRot);
 
             Clone.SetActive(true);
-            Clone.name = "Clone-"+string.Format("{0:D4}",i); //1ÀÏ¶§ 0001·Î formatingµÇ¾î ÀÌ¸§ÀÌ ºÙ¿©Áü
+            Clone.name = "Clone-"+string.Format("{0:D4}",i); //1ì¼ë•Œ 0001ë¡œ formatingë˜ì–´ ì´ë¦„ì´ ë¶™ì—¬ì§
 
             Clone.transform.SetParent(transform); 
         }
