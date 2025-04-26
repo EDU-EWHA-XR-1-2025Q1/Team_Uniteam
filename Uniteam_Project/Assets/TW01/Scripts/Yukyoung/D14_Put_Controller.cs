@@ -10,7 +10,7 @@ public class D14_Put_Controller : MonoBehaviour
     public GameObject UI;
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && isInTheArea==true){ //main mouse buttonÀ» ´­·¶´Ù¸é
+        if (Input.GetMouseButtonDown(0) && isInTheArea==true){ //main mouse buttonì„ ëˆŒë €ë‹¤ë©´
             int pickCounts = UI.GetComponent<D13_UI_Controller>().GetPickCounts();
             if (pickCounts > 0)
             {

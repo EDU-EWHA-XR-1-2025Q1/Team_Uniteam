@@ -18,6 +18,7 @@ public class D13_UI_Controller : MonoBehaviour
         int lastPutCount = int.Parse(PutCounts.text);
         int currentPutCount = lastPutCount+1;
         PutCounts.text = currentPutCount.ToString();
+        PlayerPrefs.SetInt("Score", currentPutCount);  // PlayerPrefs에 점수 저장
     }
 
     public void Decrease_PickCounts()
