@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/TW01/Scenes/Soeun/Soeun_PickAndPut.unity
+- path: Assets/TW01/Scenes/Yujin/TW01_Home.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
